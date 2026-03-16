@@ -17,3 +17,7 @@ if ~exist(myCacheFolder, 'dir')
 end
 Simulink.fileGenControl('set', 'CacheFolder', myCacheFolder, ...
    'CodeGenFolder', myCacheFolder);
+
+% Add IPS and PP directories to MATLAB path
+addpath(fullfile(projectRoot, 'IPS'));
+addpath(fullfile(projectRoot, 'PP'));
