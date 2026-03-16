@@ -33,6 +33,7 @@ COG_Y = (FRAME_SIZE_WIDTH/2);
 %% IMAGE PROCESSING SYSTEM - Land Marker Detector block
 
 DISK_KERNEL = 11;
+MARKER_MIN_PIXELS = 10;   % Min pixels after disk erosion to confirm marker (tech_spec Section 3.5)
 
 %% PATH PLANNING SYSTEM - Task Planning block
 
