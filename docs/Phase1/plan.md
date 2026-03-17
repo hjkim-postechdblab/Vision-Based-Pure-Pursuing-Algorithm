@@ -32,7 +32,7 @@
 ## 구현 계획
 
 ### Step 1: IPS — 채널 변환 + 이진화 함수 작성
-- [ ] **`UniSannio_Team/IPS/channelConvertAndBinarize.m` 생성**
+- [x] **`UniSannio_Team/IPS/channelConvertAndBinarize.m` 생성**
 
 **참조:** `docs/Phase1/tech_spec.md` Section 3.1, 3.2
 
@@ -76,7 +76,7 @@ BINARIZER_THRESHOLD = 100;   % 이진화 임계값
 ---
 
 ### Step 2: IPS — 침식 함수 작성 (트랙용 + 마커용)
-- [ ] **`UniSannio_Team/IPS/erodeTrackAndMarker.m` 생성**
+- [x] **`UniSannio_Team/IPS/erodeTrackAndMarker.m` 생성**
 
 **참조:** `docs/Phase1/tech_spec.md` Section 3.3
 
@@ -126,7 +126,7 @@ Simulink MATLAB Function 블록에서 코드 생성 미지원 시 **수동 구�
 ---
 
 ### Step 3: IPS — Arc Mask VTP 탐색 함수 작성 (findVTP)
-- [ ] **`UniSannio_Team/IPS/findVTP.m` 생성**
+- [x] **`UniSannio_Team/IPS/findVTP.m` 생성**
 
 **참조:** `docs/Phase1/tech_spec.md` Section 3.4 (전체: 3.4.1~3.4.5)
 
@@ -220,7 +220,7 @@ COG_Y = 80;             % 프레임 중심 열 (= FRAME_SIZE_WIDTH/2)
 ---
 
 ### Step 4: IPS — 착륙 마커 감지 함수 작성 (findMarker)
-- [ ] **`UniSannio_Team/IPS/findMarker.m` 생성**
+- [x] **`UniSannio_Team/IPS/findMarker.m` 생성**
 
 **참조:** `docs/Phase1/tech_spec.md` Section 3.5
 
@@ -274,7 +274,7 @@ MARKER_MIN_PIXELS = 10;   % 마커 판정 최소 픽셀 수 (tech_spec Section 3
 ---
 
 ### Step 5: IPS — 통합 함수 작성 (IPS 메인)
-- [ ] **`UniSannio_Team/IPS/IPS.m` 생성**
+- [x] **`UniSannio_Team/IPS/IPS.m` 생성**
 
 **참조:** `docs/Phase1/tech_spec.md` Section 3.6
 
@@ -349,7 +349,7 @@ end
 ---
 
 ### Step 6: PP — State Machine + TAKEOFF 상태 구현
-- [ ] **`UniSannio_Team/PP/PathPlanner.m` 생성 (TAKEOFF 상태만 우선 구현)**
+- [x] **`UniSannio_Team/PP/PathPlanner.m` 생성 (TAKEOFF 상태만 우선 구현)**
 
 **참조:** `docs/Phase1/tech_spec.md` Section 2.1, 2.2 (S1→S2 전이), Section 4.5
 
@@ -441,7 +441,7 @@ Ts = 0.005;      % PP 주기 (startVars.m:28)
 ---
 
 ### Step 7: PP — FOLLOWING 상태 + 미분 제어 구현
-- [ ] **`UniSannio_Team/PP/PathPlanner.m`의 case 2 (FOLLOWING) 완성**
+- [x] **`UniSannio_Team/PP/PathPlanner.m`의 case 2 (FOLLOWING) 완성**
 
 **참조:** `docs/Phase1/tech_spec.md` Section 4.2 (Following), 4.4 (Derivative), 2.3 (트랙 유실)
 
@@ -512,7 +512,7 @@ TIME_HOLD = 0.2;                          % 미분 유지 시간 [s]
 ---
 
 ### Step 8: PP — END_MARKER + LANDING 상태 구현
-- [ ] **`UniSannio_Team/PP/PathPlanner.m`의 case 3, 4 완성**
+- [x] **`UniSannio_Team/PP/PathPlanner.m`의 case 3, 4 완성**
 
 **참조:** `docs/Phase1/tech_spec.md` Section 4.3 (End-Marker), Section 2.2 (S3→S4)
 
@@ -566,7 +566,7 @@ Ts = 0.005;                 % PP 주기 → CENTER_CONFIRM_FRAMES = 4/0.005 = 80
 ---
 
 ### Step 9: Simulink 통합 — flightControlSystem.slx에 IPS/PP 블록 삽입
-- [ ] **`UniSannio_Team/controller/flightControlSystem.slx` 수정**
+- [x] **`UniSannio_Team/controller/flightControlSystem.slx` 수정** (통합 가이드 스크립트 `utilities/integrateFCS.m` 작성)
 
 **참조:** `docs/Phase1/tech_spec.md` Section 1.1 (전체 구조), 1.3 (블록 인터페이스), 1.4 (동작 주기)
 
@@ -626,7 +626,7 @@ add_block('simulink/User-Defined Functions/MATLAB Function', ...
 ---
 
 ### Step 10: 단위 테스트 작성
-- [ ] **`UniSannio_Team/tests/` 아래 테스트 스크립트 작성**
+- [x] **`UniSannio_Team/tests/` 아래 테스트 스크립트 작성**
 
 **참조:** `docs/Phase1/tech_spec.md` Section 9 (Acceptance Criteria)
 
