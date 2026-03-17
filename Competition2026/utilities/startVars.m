@@ -86,7 +86,7 @@ takeOffDuration = 1;
 
 %% Custom Variables
 % Add your variables here:
-% myvariable = 0;
+variables;  % IPS/PP parameters (G_B_GAIN, GAIN_TRACK, etc.)
 
 % Vision Ts
 VTs= 40*Ts;
