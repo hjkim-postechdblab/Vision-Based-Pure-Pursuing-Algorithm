@@ -1,24 +1,28 @@
 %% integrateFCS.m - Integrate IPS and PP blocks into Flight Control System
 %
 % Run this script in MATLAB after opening the project:
-%   1. Open parrotMinidroneCompetition.prj
+%   1. Open MinidroneCompetition.prj
 %   2. Run this script from the MATLAB command window
 %
 % This script adds IPS and PathPlanner MATLAB Function blocks to
-% flightControlSystem.slx and wires the signal connections.
+% flightControlSystem.slx (located in controller/) and wires the signal
+% connections.
+%
+% Competition2026 model structure:
+%   controller/flightControlSystem.slx  <- IPS/PP blocks go here
+%   mainModels/parrotMinidroneCompetition.slx  <- top-level simulation
 %
 % Reference: docs/Phase1/tech_spec.md Section 1.1, 1.3, 1.4
-%            docs/Phase1/plan.md Step 9
 %
 % Prerequisites:
-%   - IPS/*.m files (Step 1~5 completed)
-%   - PP/PathPlanner.m (Step 6~8 completed)
-%   - variables.m has MARKER_MIN_PIXELS parameter
+%   - IPS/*.m files
+%   - PP/PathPlanner.m
+%   - variables.m has all IPS/PP parameters
 
 %% ---- Configuration ----
 modelName = 'flightControlSystem';
 
-fprintf('=== Phase 1: Integrating IPS and PP into %s ===\n', modelName);
+fprintf('=== Competition2026: Integrating IPS and PP into %s ===\n', modelName);
 
 %% ---- Step 1: Open the model ----
 fprintf('[1/6] Opening model...\n');

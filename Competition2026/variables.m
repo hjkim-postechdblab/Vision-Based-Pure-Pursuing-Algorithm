@@ -1,14 +1,22 @@
-% The file supports the "parrotMinidroneCompetition.prj" file project. It
-% contains all the variables necessary to perform the simulation. The file
-% was developed for the IFAC2020 MathWorks Minidrone Competition by the
-% UNISANNIO Team consisting of
+% variables.m - IPS/PP parameters for Competition2026
 %
-% Mario Terlizzi (Team Captain) <mario.terlizzi@unisannio.it>
-% Muhammad Aatif <maatif@unisannio.it>
-% Luigi Russo <luigi.russo@unisannio.it>
-% Amin Bassiri <basiri@unisannio.it>
+% Adapted from UniSannio_Team/variables.m (IFAC2020) for the 2026
+% MathWorks Minidrone Competition model.
 %
-% Copyright 2020
+% Camera frame size: 120 x 160 (same as 2020 model)
+%
+% TODO (tech_spec Section 7.3): After initial integration, run the 8-step
+%   parameter tuning sequence:
+%   1. Verify frame size -> COG_X, COG_Y
+%   2. Check camera RGB distribution
+%   3. Re-tune BINARIZER_THRESHOLD
+%   4. Re-tune SQUARE_KERNEL (track width 1cm->10cm)
+%   5. Re-tune MIN/MAX_RADIUS_CROWN
+%   6. Re-tune DISK_KERNEL + MARKER_MIN_PIXELS (marker 2cm->20cm)
+%   7. Re-tune GAIN_TRACK, GAIN_LANDING
+%   8. Simple track full pass test
+
+% Copyright 2026
 
 %% IMAGE PROCESSING SYSTEM - Image Binarization Block
 
@@ -33,7 +41,7 @@ COG_Y = (FRAME_SIZE_WIDTH/2);
 %% IMAGE PROCESSING SYSTEM - Land Marker Detector block
 
 DISK_KERNEL = 11;
-MARKER_MIN_PIXELS = 10;   % Min pixels after disk erosion to confirm marker (tech_spec Section 3.5)
+MARKER_MIN_PIXELS = 10;   % Min pixels after disk erosion to confirm marker
 
 %% PATH PLANNING SYSTEM - Task Planning block
 
@@ -52,14 +60,12 @@ Z_HIGH = -1.2;
 
 %% PATH PLANNING SYSTEM - Nonlinear Path Planner - X PLANNER && Y PLANNER - x derivativepart & y derivative part
 
-CHANGE_DERIVATIVE_ERROR_THRESHOLD = 2;       
+CHANGE_DERIVATIVE_ERROR_THRESHOLD = 2;
 DERIVATIVE_GAIN = 0.002 ;
 TIME_HOLD = 0.2;
 
-%% PATH PLANNING SYSTEM - Non linear Path Planner - Z PLANNER 
+%% PATH PLANNING SYSTEM - Non linear Path Planner - Z PLANNER
 
 DELAY_LANDING = 4;
 
 MAX_ERROR_LANDING = 5;
-
-

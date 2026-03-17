@@ -4,7 +4,7 @@ function setUpProject()
 %   Set up the environment for the current project. This function is set to
 %   Run at Startup.
 
-%   Copyright 2013-2018 The MathWorks, Inc.
+%   Copyright 2013-2024 The MathWorks, Inc.
 
 % Use Simulink Project API to get the current project:
 p = slproject.getCurrentProject;
